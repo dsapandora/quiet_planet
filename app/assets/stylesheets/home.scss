@@ -1,0 +1,62 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.content {
+    margin-top: 0.3em;
+}
+
+.left-nav > li > a{
+    font-weight: bold;
+    text-transform: capitalize !important;
+    color: #676767;
+}
+
+.active {
+    color: #3D81F7;
+}
+
+.btn-large:hover {
+    background-color: transparent;
+
+}
+
+.fb-fab, .fb-fab:hover { background-color: #4186F5; }
+
+.fixed-action-btn {
+    bottom: 45px;
+    right: 140px;
+}
+
+.likable { list-style-type: none }
+
+.likable >li {
+    display: inline;
+    padding: 0 8px;
+}
+
+.user-image >img {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    width: 50px;
+}
+
+.user-details {
+    font-size: 12px;
+    padding-left: 1.2em;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.friend-online > img {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    width: 50px;
+    padding: 0.2em 0;
+}

@@ -29,6 +29,7 @@ gem 'rails-i18n'
 gem 'twitter-bootstrap-rails'
 gem 'materialize-sass'
 gem  'execjs'
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
