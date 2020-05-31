@@ -1,0 +1,52 @@
+<%= form_with(model: polution_info, local: true) do |form| %>
+  <% if polution_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(polution_info.errors.count, "error") %> prohibited this polution_info from being saved:</h2>
+
+      <ul>
+      <% polution_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vcdapstrat %>
+    <%= form.text_field :vcdapstrat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vcdaptrop %>
+    <%= form.text_field :vcdaptrop %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amfstrat %>
+    <%= form.text_field :amfstrat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latidude %>
+    <%= form.text_field :latidude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logitude %>
+    <%= form.text_field :logitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.text_field :city_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

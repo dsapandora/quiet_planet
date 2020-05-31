@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-05-31 16:58:51
+  terrain_reflectivity: 
+  point_radius: 
+  latidude: 
+  logitude: 
+  city: one
+
+two:
+  date: 2020-05-31 16:58:51
+  terrain_reflectivity: 
+  point_radius: 
+  latidude: 
+  logitude: 
+  city: two

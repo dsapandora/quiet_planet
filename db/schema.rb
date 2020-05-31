@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_060211) do
+ActiveRecord::Schema.define(version: 2020_05_31_215905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,22 @@ ActiveRecord::Schema.define(version: 2020_05_31_060211) do
     t.bigint "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "longitude", default: "0.0"
+    t.decimal "latitude", default: "0.0"
     t.index ["country_id"], name: "index_cities_on_country_id"
+  end
+
+  create_table "cloud_infos", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal "amfstrat", default: "0.0"
+    t.decimal "latidude", default: "0.0"
+    t.decimal "amftropclear", default: "0.0"
+    t.decimal "amftropcloudy", default: "0.0"
+    t.decimal "logitude", default: "0.0"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_cloud_infos_on_city_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -28,6 +43,41 @@ ActiveRecord::Schema.define(version: 2020_05_31_060211) do
     t.string "abbreviature"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "polution_infos", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal "vcdapstrat", default: "0.0"
+    t.decimal "vcdaptrop", default: "0.0"
+    t.decimal "amfstrat", default: "0.0"
+    t.decimal "latidude", default: "0.0"
+    t.decimal "logitude", default: "0.0"
+    t.decimal "vcdapbelowcloud", default: "0.0"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_polution_infos_on_city_id"
+  end
+
+  create_table "raidition_infos", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal "terrain_reflectivity", default: "0.0"
+    t.decimal "point_radius", default: "0.0"
+    t.decimal "latidude", default: "0.0"
+    t.decimal "logitude", default: "0.0"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_raidition_infos_on_city_id"
+  end
+
+  create_table "rain_infos", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal "value", default: "0.0"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_rain_infos_on_city_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,9 +88,21 @@ ActiveRecord::Schema.define(version: 2020_05_31_060211) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.decimal "latitude", default: "0.0"
+    t.decimal "longitude", default: "0.0"
+    t.string "phone"
+    t.string "fullname"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "cities", "countries"
+  add_foreign_key "cloud_infos", "cities"
+  add_foreign_key "polution_infos", "cities"
+  add_foreign_key "raidition_infos", "cities"
+  add_foreign_key "rain_infos", "cities"
+  add_foreign_key "users", "cities"
 end

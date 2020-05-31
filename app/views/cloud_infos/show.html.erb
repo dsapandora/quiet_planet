@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cloud_info.date %>
+</p>
+
+<p>
+  <strong>Amfstrat:</strong>
+  <%= @cloud_info.amfstrat %>
+</p>
+
+<p>
+  <strong>Latidude:</strong>
+  <%= @cloud_info.latidude %>
+</p>
+
+<p>
+  <strong>Amftropclear:</strong>
+  <%= @cloud_info.amftropclear %>
+</p>
+
+<p>
+  <strong>Amftropcloudy:</strong>
+  <%= @cloud_info.amftropcloudy %>
+</p>
+
+<p>
+  <strong>Logitude:</strong>
+  <%= @cloud_info.logitude %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @cloud_info.city %>
+</p>
+
+<%= link_to 'Edit', edit_cloud_info_path(@cloud_info) %> |
+<%= link_to 'Back', cloud_infos_path %>

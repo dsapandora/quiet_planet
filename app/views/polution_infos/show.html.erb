@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @polution_info.date %>
+</p>
+
+<p>
+  <strong>Vcdapstrat:</strong>
+  <%= @polution_info.vcdapstrat %>
+</p>
+
+<p>
+  <strong>Vcdaptrop:</strong>
+  <%= @polution_info.vcdaptrop %>
+</p>
+
+<p>
+  <strong>Amfstrat:</strong>
+  <%= @polution_info.amfstrat %>
+</p>
+
+<p>
+  <strong>Latidude:</strong>
+  <%= @polution_info.latidude %>
+</p>
+
+<p>
+  <strong>Logitude:</strong>
+  <%= @polution_info.logitude %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @polution_info.city %>
+</p>
+
+<%= link_to 'Edit', edit_polution_info_path(@polution_info) %> |
+<%= link_to 'Back', polution_infos_path %>

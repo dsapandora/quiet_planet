@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :raidition_infos
+  resources :cloud_infos
+  resources :polution_infos
+  resources :rain_infos
   resources :cities
   resources :countries
   get 'home/index'

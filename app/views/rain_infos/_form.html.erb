@@ -1,0 +1,32 @@
+<%= form_with(model: rain_info, local: true) do |form| %>
+  <% if rain_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rain_info.errors.count, "error") %> prohibited this rain_info from being saved:</h2>
+
+      <ul>
+      <% rain_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.text_field :city_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

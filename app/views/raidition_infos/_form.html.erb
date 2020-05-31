@@ -1,0 +1,47 @@
+<%= form_with(model: raidition_info, local: true) do |form| %>
+  <% if raidition_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(raidition_info.errors.count, "error") %> prohibited this raidition_info from being saved:</h2>
+
+      <ul>
+      <% raidition_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terrain_reflectivity %>
+    <%= form.text_field :terrain_reflectivity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :point_radius %>
+    <%= form.text_field :point_radius %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latidude %>
+    <%= form.text_field :latidude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logitude %>
+    <%= form.text_field :logitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.text_field :city_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

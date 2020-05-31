@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @raidition_info.date %>
+</p>
+
+<p>
+  <strong>Terrain reflectivity:</strong>
+  <%= @raidition_info.terrain_reflectivity %>
+</p>
+
+<p>
+  <strong>Point radius:</strong>
+  <%= @raidition_info.point_radius %>
+</p>
+
+<p>
+  <strong>Latidude:</strong>
+  <%= @raidition_info.latidude %>
+</p>
+
+<p>
+  <strong>Logitude:</strong>
+  <%= @raidition_info.logitude %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @raidition_info.city %>
+</p>
+
+<%= link_to 'Edit', edit_raidition_info_path(@raidition_info) %> |
+<%= link_to 'Back', raidition_infos_path %>

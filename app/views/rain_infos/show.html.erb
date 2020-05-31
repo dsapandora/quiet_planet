@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @rain_info.date %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @rain_info.value %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @rain_info.city %>
+</p>
+
+<%= link_to 'Edit', edit_rain_info_path(@rain_info) %> |
+<%= link_to 'Back', rain_infos_path %>
