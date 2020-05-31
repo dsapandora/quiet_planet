@@ -1,0 +1,2 @@
+class Komune < ApplicationRecord
+end

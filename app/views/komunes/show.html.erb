@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @komune.value %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @komune.photo %>
+</p>
+
+<p>
+  <strong>Co2 foot print value:</strong>
+  <%= @komune.co2_foot_print_value %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @komune.latitude %>
+</p>
+
+<p>
+  <strong>Logitude:</strong>
+  <%= @komune.logitude %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @komune.user %>
+</p>
+
+<%= link_to 'Edit', edit_komune_path(@komune) %> |
+<%= link_to 'Back', komunes_path %>

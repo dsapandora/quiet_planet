@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: MyString
+  photo: MyString
+  co2_foot_print_value: 9.99
+  latitude: 9.99
+  logitude: 
+  user: 
+
+two:
+  value: MyString
+  photo: MyString
+  co2_foot_print_value: 9.99
+  latitude: 9.99
+  logitude: 
+  user: 

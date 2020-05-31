@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Komunes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Photo</th>
+      <th>Co2 foot print value</th>
+      <th>Latitude</th>
+      <th>Logitude</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @komunes.each do |komune| %>
+      <tr>
+        <td><%= komune.value %></td>
+        <td><%= komune.photo %></td>
+        <td><%= komune.co2_foot_print_value %></td>
+        <td><%= komune.latitude %></td>
+        <td><%= komune.logitude %></td>
+        <td><%= komune.user %></td>
+        <td><%= link_to 'Show', komune %></td>
+        <td><%= link_to 'Edit', edit_komune_path(komune) %></td>
+        <td><%= link_to 'Destroy', komune, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Komune', new_komune_path %>

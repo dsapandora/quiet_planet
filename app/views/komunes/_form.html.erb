@@ -1,0 +1,47 @@
+<%= form_with(model: komune, local: true) do |form| %>
+  <% if komune.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(komune.errors.count, "error") %> prohibited this komune from being saved:</h2>
+
+      <ul>
+      <% komune.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :co2_foot_print_value %>
+    <%= form.text_field :co2_foot_print_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logitude %>
+    <%= form.text_field :logitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.text_field :user %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

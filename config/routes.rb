@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :komunes
   resources :raidition_infos
   resources :cloud_infos
   resources :polution_infos

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_215905) do
+ActiveRecord::Schema.define(version: 2020_05_31_220834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 2020_05_31_215905) do
     t.string "abbreviature"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "komunes", force: :cascade do |t|
+    t.string "value"
+    t.string "photo"
+    t.decimal "co2_foot_print_value"
+    t.decimal "latitude"
+    t.decimal "logitude"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_komunes_on_user_id"
   end
 
   create_table "polution_infos", force: :cascade do |t|
