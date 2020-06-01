@@ -1,29 +1,57 @@
-<p id="notice"><%= notice %></p>
+<nav class="navigation_header">
+        <div class="navigation__column">
+        </div>
+        <div class="navigation__column">
+            <a href="#">
+                <!-- Master branch comment -->
+              <div class="logo" >
+                <%=image_tag("Logoa.png") %>
+                <span> HOME </span>
+               </div>
+            </a>
+        </div>
+      <div class="navigation__column">
+      </div>
+    </nav>
+   <main id="feed">
 
-<h1>Countries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Abbreviature</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @countries.each do |country| %>
-      <tr>
-        <td><%= country.name %></td>
-        <td><%= country.abbreviature %></td>
-        <td><%= link_to 'Show', country %></td>
-        <td><%= link_to 'Edit', edit_country_path(country) %></td>
-        <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Country', new_country_path %>
+       <div class="photo">
+         <div class="col-sm-9" id="globe">
+             <canvas id="canvasOne" width="1000" height="1000"
+                     style="width: 100%; height: auto; background-color: black;">
+                 Your browser does not support HTML5 Canvas.
+             </canvas>
+         </div>
+       </div>
+   </main>
+   <footer class="footer">
+         <nav class="navigation">
+                <div class="navigation__column">
+                    <ul class="navigations__links">
+                      <li class="navigation__list-item">
+                        <a href="#" class="footer__link">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                      </li>
+                      <li class="navigation__list-item">
+                        <a href="#" class="footer__link">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                      </li>
+                        <li class="navigation__list-item">
+                          <a href="#" class="footer__link">
+                          <span class="glyphicon glyphicon-king"></span>
+                          </a>
+                        </li>
+                        <li class="navigation__list-item">
+                          <a href="#" class="footer__link">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                          </a>
+                        </li>
+                        <li class="navigation__list-item">
+                            <a href="#" class="footer__link"><span class="glyphicon glyphicon-globe"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+   </footer>
