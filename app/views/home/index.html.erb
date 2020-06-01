@@ -1,97 +1,128 @@
-<body>
-    <nav>
-        <div class="nav-wrapper fb-nav">
-            <a href="#" class="brand-logo">QUIET PLANET</a>
-
-            <ul class="right">
-                <li><a href="#">John</a></li>
-                <li><a href="#"><i class="mdi-social-people"></i></a></li>
-                <li><a href="#"><i class="mdi-communication-messenger"></i></a></li>
-                <li><a href="#"><i class="mdi-social-public"></i></a></li>
-            </ul>
+<nav class="navigation_header">
+        <div class="navigation__column">
         </div>
+        <div class="navigation__column">
+            <a href="feed.html">
+                <!-- Master branch comment -->
+              <div class="logo" >
+                <%=image_tag("Logoa.png") %>
+                <span> HOME </span>
+               </div>
+            </a>
+        </div>
+      <div class="navigation__column">
+      </div>
     </nav>
-
-    <div class="fixed-action-btn">
-        <a class=" btn-floating btn-large waves-effect waves-light fb-fab">
-            <i class="mdi-content-add large"></i>
-        </a>
-    </div>
-
-    <div class="content row">
-        <div class="col l2">
-            <ul class="left-nav">
-                <li class="active"><a class="btn-large btn-flat"><i class="mdi-av-my-library-books left"></i>News Feed</a></li>
-                <li><a class="btn-large btn-flat"><i class="mdi-communication-messenger left"></i>Messages</a></li>
-                <li><a class="btn-large btn-flat"><i class="mdi-action-event left"></i>Events</a></li>
-                <li><a class="btn-large btn-flat"><i class="mdi-av-games left"></i>Games</a></li>
-                <li><a class="btn-large btn-flat"><i class="mdi-image-camera-alt left"></i>Photos</a></li>
-            </ul>
-        </div>
-
-        <div class="col l6">
-            <div class="card post">
-                <div class="card-content">
-                    <div class="row user valign-wrapper">
-                        <div class="user-image left">
-                            <%= image_tag("user1.jpg")%>
-                        </div>
-                        <div class="user-details valign">
-                            <span class="user-name">Era Balliu</span>
-                            <p>June 3</p>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci animi eligendi error harum possimus quaerat ullam. Accusantium aliquam blanditiis impedit laudantium, modi neque nesciunt ratione sunt, totam, vitae voluptate!</p>
-                    <div class="card-image">
-                        <%= image_tag("img1.png")%>
-                    </div>
-                    <ul class="likable">
-                        <li><a href="#"><i class="mdi-action-thumb-up"></i> Like</a></li>
-                        <li><a href="#"><i class="mdi-communication-comment"></i> Comment</a></li>
-                        <li><a href="#"><i class="mdi-social-share"></i> Share</a></li>
+   <main id="feed">
+       <div class="photo">
+           <header class="photo__header">
+               <img src="images/avatar.jpg" class="photo__avatar" />
+               <div class="photo__user-info">
+                   <span class="photo__author">inthetiger</span>
+                   <span class="photo__location">Bestechung</span>
+               </div>
+           </header>
+           <img src="images/feedPhoto.jpg" />
+           <div class="photo__info">
+               <div class="photo__actions">
+                   <span class="photo__action">
+                       <i class="fa fa-heart-o fa-lg"></i>
+                   </span>
+                   <span class="photo__action">
+                       <i class="fa fa-comment-o fa-lg"></i>
+                   </span>
+               </div>
+               <span class="photo__likes">45 likes</span>
+               <ul class="photo__comments">
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+               </ul>
+               <span class="photo__time-ago">2 hours ago</span>
+               <div class="photo__add-comment-container">
+                   <textarea name="comment" placeholder="Add a comment..."></textarea>
+                   <i class="fa fa-ellipsis-h"></i>
+               </div>
+           </div>
+       </div>
+       <div class="photo">
+           <header class="photo__header">
+               <img src="images/avatar.jpg" class="photo__avatar" />
+               <div class="photo__user-info">
+                   <span class="photo__author">inthetiger</span>
+                   <span class="photo__location">Bestechung</span>
+               </div>
+           </header>
+           <img src="images/feedPhoto.jpg" />
+           <div class="photo__info">
+               <div class="photo__actions">
+                   <span class="photo__action">
+                           <i class="fa fa-heart-o fa-lg"></i>
+                       </span>
+                   <span class="photo__action">
+                           <i class="fa fa-comment-o fa-lg"></i>
+                       </span>
+               </div>
+               <span class="photo__likes">45 likes</span>
+               <ul class="photo__comments">
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+                   <li class="photo__comment">
+                       <span class="photo__comment-author">serranoarevalo</span> love this!
+                   </li>
+               </ul>
+               <span class="photo__time-ago">2 hours ago</span>
+               <div class="photo__add-comment-container">
+                   <textarea name="comment" placeholder="Add a comment..."></textarea>
+                   <i class="fa fa-ellipsis-h"></i>
+               </div>
+           </div>
+       </div>
+   </main>
+   <footer class="footer">
+         <nav class="navigation">
+                <div class="navigation__column">
+                    <ul class="navigations__links">
+                      <li class="navigation__list-item">
+                        <a href="#" class="footer__link">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                      </li>
+                      <li class="navigation__list-item">
+                        <a href="#" class="footer__link">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                      </li>
+                        <li class="navigation__list-item">
+                          <a href="#" class="footer__link">
+                          <span class="glyphicon glyphicon-king"></span>
+                          </a>
+                        </li>
+                        <li class="navigation__list-item">
+                          <a href="#" class="footer__link">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                          </a>
+                        </li>
+                        <li class="navigation__list-item">
+                            <a href="#" class="footer__link"><span class="glyphicon glyphicon-globe"></span></a>
+                        </li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="card post">
-                <div class="card-content">
-                    <div class="row user valign-wrapper">
-                        <div class="user-image left">
-                            <%= image_tag("user2.jpg")%>
-                        </div>
-                        <div class="user-details valign">
-                            <span class="user-name">Armind Shehu</span>
-                            <p>June 3</p>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci animi eligendi error harum possimus quaerat ullam. Accusantium aliquam blanditiis impedit laudantium, modi neque nesciunt ratione sunt, totam, vitae voluptate!</p>
-                    <div class="card-image">
-                        <%= image_tag("img1.png")%>
-                    </div>
-                    <ul class="likable">
-                        <li><a href="#"><i class="mdi-action-thumb-up"></i> Like</a></li>
-                        <li><a href="#"><i class="mdi-communication-comment"></i> Comment</a></li>
-                        <li><a href="#"><i class="mdi-social-share"></i> Share</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col l3">
-            <div class="card">
-                <div class="card-content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur ipsam necessitatibus numquam, perferendis possimus quis reiciendis soluta. Aperiam assumenda eaque eum maxime neque perferendis possimus recusandae rem saepe veniam!
-                </div>
-            </div>
-        </div>
-
-        <div class="col l1 online-friends">
-            <ul>
-                <li class="friend-online"><%= image_tag("user2.jpg")%></li>
-                <li class="friend-online"><%= image_tag("user3.jpg")%></li>
-                <li class="friend-online"><%= image_tag("user4.jpg")%></li>
-                <li class="friend-online"><%= image_tag("user5.jpg")%></li>
-            </ul>
-        </div>
-    </div>
-</body>
+            </nav>
+   </footer>
