@@ -54,3 +54,58 @@ list.each do |row|
   CloudInfo.create(city_id: city.id, date: date, latidude: latitude, logitude: longitude, amfstrat:clean_data(row[AmfStrat]), amftropclear:clean_data(row[AmfTropClear]), amftropcloudy: clean_data(row[AmfTropCloudy]))
 end
 end
+
+
+# Create user post for demo
+u1 = User.new(email: "user1@example.net", password: "test test")
+u1.fullname = 'Jerome Gaveau'
+u1.photo = 'https://live.staticflickr.com/1128/3169334745_68b573f8ee_m.jpg'
+u1.city_id = city_ni.id
+u1.save
+
+
+u2 = User.new(email: "user2@example.net", password: "test test")
+u2.fullname = 'Jonathan Lecluze'
+u2.photo = 'https://api.creativecommons.engineering/v1/thumbs/1298c4a2-5e08-4394-8277-8368dfb09f32.jpg'
+u2.city_id = city_pa.id
+u2.save
+
+
+u3 = User.new(email: "user3@example.net", password: "test test")
+u3.fullname = 'Linda Smith'
+u3.photo = 'https://api.creativecommons.engineering/v1/thumbs/98ec069c-84a7-4f66-9398-b870ef6cd403.jpg'
+u3.city_id = city_cr.id
+u3.save
+
+
+u4 = User.new(email: "user4@example.net", password: "test test")
+u4.photo = 'https://api.creativecommons.engineering/v1/thumbs/691f9925-f6f3-45d4-b6b9-bf6c079f1f47.jpg'
+u4.fullname = 'Gaby O´Hara'
+u4.city_id = city_be.id
+u4.save
+
+
+p5 = Komune.new(user_id: u4.id)
+p5.value='“Like music and art, love of nature is a common language that can transcend political or social boundaries.” —Jimmy Carter'
+p5.photo=''
+p5.save
+
+p4 = Komune.new(user_id: u1.id)
+p4.value='They say an elephant never forgets.'
+p4.photo='https://live.staticflickr.com/3628/3525668687_69981fe57a_b.jpg'
+p4.save
+
+p3 = Komune.new(user_id: u3.id)
+p3.value='“One of the first conditions of happiness is that the link between man and nature shall not be broken.” —Leo Tolstoy'
+p3.photo=''
+p3.save
+
+p2 = Komune.new(user_id: u2.id)
+p2.value='We have managed to reduce, compost or reuse 50% of our waste streams.'
+p2.photo='https://live.staticflickr.com/57/163680271_c5cd79783f_b.jpg'
+p2.save
+
+p1 = Komune.new(user_id: u1.id)
+p1.value='“Progress is impossible without change, and those who cannot change their minds cannot change anything.” -George Bernard Shaw'
+p1.photo=''
+p1.save
