@@ -1,5 +1,5 @@
 class CheckPointsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_check_point, only: [:show, :edit, :update, :destroy]
 
   # GET /check_points
