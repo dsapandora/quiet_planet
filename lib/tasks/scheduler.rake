@@ -10,6 +10,44 @@ task update_daily_weather: :environment do
   end
 end
 
+task historical_monthly_data: :environment do
+  initial = DateTime.now.beginning_of_year
+  stop_date = DateTime.now - 5.days
+  check_date = initial
+  while check_date < stop_date do
+    CheckPoint.all.each do |ck|
+      url = URI("https://visual-crossing-weather.p.rapidapi.com/history?dayStartTime=00:00:00&contentType=json&dayEndTime=23:00:00&shortColumnNames=false&startDateTime=#{initial.strftime('%Y-%m-%dT00:00:00')}&aggregateHours=1&location=#{ck.latitude},#{ck.longitude}&endDateTime=#{(initial+13.days).strftime('%Y-%m-%dT23:00:00')}&unitGroup=metric")
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      request = Net::HTTP::Get.new(url)
+      request["x-rapidapi-host"] = 'visual-crossing-weather.p.rapidapi.com'
+      request["x-rapidapi-key"] = ENV['AUTH']
+      response = http.request(request)
+      data_list = JSON.parse(response.read_body)
+      data_list['locations']["#{ck.latitude},#{ck.longitude}"]['values'].each do |data|
+        d = DailyWeather.new
+        d.temperature = data['temp']
+        d.humidity = data['humidity']
+        d.radiation = data['visibility']
+        d.feels_like = data['heatindex']
+        d.dew_point = data['dew']
+        d.wind_speed = data['wspd']
+        d.preasure = data['pressure']
+        d.time_in_unix = data['datetimeStr'].to_datetime
+        d.weather_description = data['conditions']
+        d.latitude = ck.latitude
+        d.longitude = ck.longitude
+        d.save
+      end
+    end
+    check_date += 15.days
+  end
+
+
+  puts response.read_body
+end
+
 
 task update_old_daily_weather: :environment do
   initial = DateTime.now - 5.days
