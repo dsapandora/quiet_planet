@@ -11,7 +11,7 @@ module UpdateDailyWeather
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'community-open-weather-map.p.rapidapi.com'
-    request["x-rapidapi-key"] = 'd637a1efc4msh9baa624d03c7a03p1eafd8jsn6b8adf289ef3'
+    request["x-rapidapi-key"] = ENV['AUTH']
 
     response = http.request(request)
     data = JSON.parse(response.read_body)
