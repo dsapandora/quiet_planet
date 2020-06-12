@@ -12,11 +12,17 @@ end
 
 
 task update_old_daily_weather: :environment do
-  initial = 4.days.ago.beginning_of_day
+  initial = DateTime.now - 5.days
   stop_date = DateTime.now
   check_date = initial
+   counter = 0
   while check_date < stop_date
     CheckPoint.all.each do |ck|
+      if counter == 98
+        # I need to sleep the process at least for a minute to don't block the api
+        sleep(1.minutes)
+        counter = 0
+      end
       url = URI("https://community-open-weather-map.p.rapidapi.com/onecall/timemachine?lat=#{ck.latitude}&lon=#{ck.longitude}&dt=#{check_date.to_time.to_i}")
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
