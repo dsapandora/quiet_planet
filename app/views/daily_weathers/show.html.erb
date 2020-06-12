@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @daily_weather.temperature %>
+</p>
+
+<p>
+  <strong>Humidity:</strong>
+  <%= @daily_weather.humidity %>
+</p>
+
+<p>
+  <strong>Radiation:</strong>
+  <%= @daily_weather.radiation %>
+</p>
+
+<p>
+  <strong>Feels like:</strong>
+  <%= @daily_weather.feels_like %>
+</p>
+
+<p>
+  <strong>Dew point:</strong>
+  <%= @daily_weather.dew_point %>
+</p>
+
+<p>
+  <strong>Wind speed:</strong>
+  <%= @daily_weather.wind_speed %>
+</p>
+
+<p>
+  <strong>Preasure:</strong>
+  <%= @daily_weather.preasure %>
+</p>
+
+<p>
+  <strong>Time in unix:</strong>
+  <%= @daily_weather.time_in_unix %>
+</p>
+
+<p>
+  <strong>Weather description:</strong>
+  <%= @daily_weather.weather_description %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @daily_weather.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @daily_weather.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_daily_weather_path(@daily_weather) %> |
+<%= link_to 'Back', daily_weathers_path %>

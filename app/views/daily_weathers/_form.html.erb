@@ -1,0 +1,72 @@
+<%= form_with(model: daily_weather, local: true) do |form| %>
+  <% if daily_weather.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(daily_weather.errors.count, "error") %> prohibited this daily_weather from being saved:</h2>
+
+      <ul>
+      <% daily_weather.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :temperature %>
+    <%= form.text_field :temperature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :humidity %>
+    <%= form.text_field :humidity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :radiation %>
+    <%= form.text_field :radiation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :feels_like %>
+    <%= form.text_field :feels_like %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dew_point %>
+    <%= form.text_field :dew_point %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wind_speed %>
+    <%= form.text_field :wind_speed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preasure %>
+    <%= form.text_field :preasure %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_in_unix %>
+    <%= form.datetime_select :time_in_unix %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weather_description %>
+    <%= form.text_field :weather_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

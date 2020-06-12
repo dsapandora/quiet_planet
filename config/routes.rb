@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :daily_weathers
   resources :komunes
   resources :raidition_infos
   resources :cloud_infos
