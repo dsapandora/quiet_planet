@@ -22,6 +22,8 @@ task update_old_daily_weather: :environment do
         # I need to sleep the process at least for a minute to don't block the api
         sleep(1.minutes)
         counter = 0
+      else
+        counter += 1
       end
       url = URI("https://community-open-weather-map.p.rapidapi.com/onecall/timemachine?lat=#{ck.latitude}&lon=#{ck.longitude}&dt=#{check_date.to_time.to_i}")
       http = Net::HTTP.new(url.host, url.port)
