@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :check_points
   resources :daily_weathers
   resources :komunes
   resources :raidition_infos

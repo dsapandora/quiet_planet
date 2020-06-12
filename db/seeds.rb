@@ -109,3 +109,10 @@ p1 = Komune.new(user_id: u1.id)
 p1.value='“Progress is impossible without change, and those who cannot change their minds cannot change anything.” -George Bernard Shaw'
 p1.photo=''
 p1.save
+
+
+CheckPoint.create(name: "Café Unido Marbella", latitude: 8.9811995, longitude: -79.519572)
+CheckPoint.create(name: "Globabl Bank", latitude: 8.9843051, longitude: -79.518749)
+CheckPoint.create(name: "Alquila Costura", latitude: 8.9861703, longitude: -79.5227837)
+CheckPoint.create(name: "Via Brazil", latitude: 8.9872975, longitude: -79.5156296)
+CheckPoint.create(name: "MultiPlaza", latitude: 8.9876156, longitude: -79.5126683)
