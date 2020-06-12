@@ -23,7 +23,7 @@ module UpdateDailyWeather
     d.dew_point = 0
     d.wind_speed = data['wind']['speed']
     d.preasure = data['main']['pressure']
-    d.time_in_unix = data['dt']
+    d.time_in_unix = Time.at(data['dt'])
     d.weather_description = data['weather'][0]['description']
     d.latitude = latitude
     d.longitude = longitude

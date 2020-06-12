@@ -17,6 +17,7 @@ task update_old_daily_weather: :environment do
   check_date = initial
    counter = 0
   while check_date < stop_date do
+    puts check_date
     CheckPoint.all.each do |ck|
       if counter == 98
         # I need to sleep the process at least for a minute to don't block the api
@@ -44,13 +45,13 @@ task update_old_daily_weather: :environment do
         d.dew_point = data['dew_point']
         d.wind_speed = data['speed']
         d.preasure = data['pressure']
-        d.time_in_unix = data['dt']
+        d.time_in_unix = Time.at(data['dt'])
         d.weather_description = data['weather'][0]['description']
         d.latitude = ck.latitude
         d.longitude = ck.longitude
         d.save
       end
     end
-    check_date + 1.day
+    check_date = check_date + 1.day
   end
 end
