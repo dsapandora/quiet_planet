@@ -1,4 +1,5 @@
 class DailyWeathersController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_daily_weather, only: [:show, :edit, :update, :destroy]
 
   # GET /daily_weathers
