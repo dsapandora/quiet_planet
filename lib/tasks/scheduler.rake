@@ -26,7 +26,8 @@ task update_old_daily_weather: :environment do
       request["x-rapidapi-key"] = 'd637a1efc4msh9baa624d03c7a03p1eafd8jsn6b8adf289ef3'
       response = http.request(request)
       data_list = JSON.parse(response.read_body)
-      data_list.hourly.each do |data|
+      next unless data_list.key?("hourly") && data_list["hourly"].present?
+      data_list["hourly"].each do |data|
         d = DailyWeather.new
         d.temperature = data['temp']/10
         d.humidity = data['humidity']
@@ -37,8 +38,8 @@ task update_old_daily_weather: :environment do
         d.preasure = data['pressure']
         d.time_in_unix = data['dt']
         d.weather_description = data['weather'][0]['description']
-        d.latitude = latitude
-        d.longitude = longitude
+        d.latitude = ck.latitude
+        d.longitude = ck.longitude
         d.save
       end
     end
