@@ -43,9 +43,6 @@ task historical_monthly_data: :environment do
     end
     check_date += 15.days
   end
-
-
-  puts response.read_body
 end
 
 
