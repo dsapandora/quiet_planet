@@ -1,11 +1,12 @@
 class DailyWeathersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_daily_weather, only: [:show, :edit, :update, :destroy]
+   paginates_per 50
 
   # GET /daily_weathers
   # GET /daily_weathers.json
   def index
-    @daily_weathers = DailyWeather.all
+    @daily_weathers = DailyWeather.all.page params[:page]
   end
 
   # GET /daily_weathers/1
