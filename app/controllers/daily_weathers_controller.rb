@@ -1,7 +1,6 @@
 class DailyWeathersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_daily_weather, only: [:show, :edit, :update, :destroy]
-   paginates_per 50
 
   # GET /daily_weathers
   # GET /daily_weathers.json
