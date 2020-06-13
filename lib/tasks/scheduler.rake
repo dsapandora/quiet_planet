@@ -11,12 +11,12 @@ task update_daily_weather: :environment do
 end
 
 task historical_monthly_data: :environment do
-  initial = DateTime.now.beginning_of_year
+  initial = DateTime.now.beginning_of_year - 6.months
   stop_date = DateTime.now - 5.days
   check_date = initial
   while check_date < stop_date do
     CheckPoint.all.each do |ck|
-      url = URI("https://visual-crossing-weather.p.rapidapi.com/history?dayStartTime=00:00:00&contentType=json&dayEndTime=23:00:00&shortColumnNames=false&startDateTime=#{initial.strftime('%Y-%m-%dT00:00:00')}&aggregateHours=1&location=#{ck.latitude},#{ck.longitude}&endDateTime=#{(initial+13.days).strftime('%Y-%m-%dT23:00:00')}&unitGroup=metric")
+      url = URI("https://visual-crossing-weather.p.rapidapi.com/history?dayStartTime=00:00:00&contentType=json&dayEndTime=23:00:00&shortColumnNames=false&startDateTime=#{check_date.strftime('%Y-%m-%dT00:00:00')}&aggregateHours=1&location=#{ck.latitude},#{ck.longitude}&endDateTime=#{(check_date+13.days).strftime('%Y-%m-%dT23:00:00')}&unitGroup=metric")
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
