@@ -17,7 +17,18 @@ class DailyWeathersController < ApplicationController
     ckp = CheckPoint.find(params[:checkpoint_id])
     @daily_weathers = DailyWeather.where(latitude: ckp.latitude, longitude: ckp.longitude)
     respond_to do |format|
-      format.csv { send_data @daily_weathers.to_csv, filename: "data-#{ckp.name}.csv" }
+      format.csv { send_data to_csv(@daily_weathers), filename: "data-#{ckp.name}.csv" }
+    end
+  end
+
+  def to_csv(daily_weathers)
+    attributes = %w{temperature humidity feels_like dew_point wind_speed preasure time_in_unix latitude longitude weather_description }
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      daily_weathers.each do |data|
+        csv << attributes.map{ |attr| data.send(attr) }
+      end
     end
   end
 
