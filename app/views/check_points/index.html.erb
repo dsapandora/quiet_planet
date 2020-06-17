@@ -20,7 +20,7 @@
         <td><%= check_point.latitude %></td>
         <td><%= check_point.longitude %></td>
         <td><%= link_to 'Show', check_point %></td>
-        <td><a src="<% download_csv_path(check_point.id)%>"> Descargar PDF </a></td>
+        <td><a href="<%=download_csv_path(check_point.id)%>"> Descargar PDF </a></td>
         <td><%= link_to 'Edit', edit_check_point_path(check_point) %></td>
         <td><%= link_to 'Destroy', check_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
