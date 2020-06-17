@@ -13,6 +13,15 @@ class DailyWeathersController < ApplicationController
   def show
   end
 
+  def download_csv
+    ckp = CheckPoint.find(params[:checkpoint_id])
+    @daily_weathers = DailyWeather.where(latitude: ckp.latitude, longitude: ckp.longitude)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @daily_weathers.to_csv, filename: "data-#{ckp.name}.csv" }
+    end
+  end
+
   # GET /daily_weathers/new
   def new
     @daily_weather = DailyWeather.new
