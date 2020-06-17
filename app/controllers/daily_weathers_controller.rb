@@ -1,3 +1,4 @@
+require 'csv'
 class DailyWeathersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_daily_weather, only: [:show, :edit, :update, :destroy]
